@@ -1,0 +1,38 @@
+.wpim-wrap-mapa{
+	text-align:center;
+}
+
+@media only screen and (min-width: 960px)  {
+	#wp-img-mapa{ 
+		width:601px; 
+		height:477px;
+		
+	}
+	
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#wp-img-mapa{ 
+		width:601px; 
+		height:477px:
+		
+	}
+	
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#wp-img-mapa{
+		width:430px;
+		
+	}
+	
+}
+			
+@media only screen and (max-width: 479px) {		
+	#wp-img-mapa{
+		width:270px; 
+	
+	}
+	
+}

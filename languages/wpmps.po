@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpmps\n"
+"POT-Creation-Date: 2014-04-03 22:42+0100\n"
+"PO-Revision-Date: 2014-04-03 22:42+0100\n"
+"Last-Translator: Juan Carlos <jc.gomezlobo@gmail.com>\n"
+"Language-Team: \n"
+"Language: Es-es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;__;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins"
+"\\political-map-spain\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins"
+"\\political-map-spain\n"
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/class-wp-mapa-spain.php:444
+msgid "Seleccione Provincia"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:72
+msgid "WP Mapa Politico España"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:80
+msgid "WordPress Plugin - Mapa Politico España"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:106
+msgid "Opciones Grabadas."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:112
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:144
+msgid "Grabar Opciones"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:115
+msgid "Zona"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:116
+msgid "Href"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\plugins\political-map-spain/wp-mapa-politico-spain.php:117
+msgid "Title"
+msgstr ""
