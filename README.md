@@ -1,8 +1,10 @@
-WP Political Map Image for WordPress
+WordPress Plugin - Mapa Político de España
 ==========
 
-WP Political Map Image es un plugin wordpress que permite añadir a las páginas o entradas un mapa politico de españa
-definido con un mapa de areas para enlaces
+Mapa Político de España es un plugin wordpress que permite insertar 
+una imágen de un mapa politico de España. Sobre esta imagen estan 
+definidas unas areas para poder establecer enlaces personalizados
+para cada una de las provinicas.
 
 Browser compatibility
 ----------
