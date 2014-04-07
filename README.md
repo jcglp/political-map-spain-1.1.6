@@ -9,9 +9,9 @@ para cada una de las provinicas.
 Instalación
 ----------
 
-Url del plugin en Wordpress: http://wordpress.org/plugins/spain-cookie-law/
+Url del plugin en Wordpress: http://wordpress.org/plugins/<mapa politico de españa>/
 
-Guía de instalación: http://wordpress.org/plugins/spain-cookie-law/installation/
+Guía de instalación: http://wordpress.org/plugins/<mapa politico de españa>/installation/
 
 
 Uso 
