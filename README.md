@@ -6,17 +6,20 @@ una imágen de un mapa politico de España. Sobre esta imagen estan
 definidas unas areas para poder establecer enlaces personalizados
 para cada una de las provinicas.
 
-Browser compatibility
-----------
-- IE 8+
-- Chrome 8+
-- Firefox 10+
-- Safari 3+
-- Opera 10.6+
-
-Integration
+Instalación
 ----------
 
+Url del plugin en Wordpress: http://wordpress.org/plugins/spain-cookie-law/
 
-Internationalization (i18n)
+Guía de instalación: http://wordpress.org/plugins/spain-cookie-law/installation/
+
+
+Uso 
 ----------
+
+
+
+
+FAQ
+----------
+Si tienes dudas, preguntas o te da errores ponte en contacto conmigo: página del plugin
