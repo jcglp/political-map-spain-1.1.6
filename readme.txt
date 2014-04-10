@@ -1,4 +1,4 @@
-=== WP Political Map Image 14 (Spain Map) ===
+===  WP Mapa Politico España ===
 Contributors: jcglp
 Tags: map, image, spain
 Requires at least: 3.0.1
