@@ -9,17 +9,12 @@ para cada una de las provinicas.
 Instalación
 ----------
 
-Url del plugin en Wordpress: http://wordpress.org/plugins/<mapa politico de españa>/
+Url del plugin en Wordpress: https://wordpress.org/plugins/wp-mapa-politico-spain/
 
-Guía de instalación: http://wordpress.org/plugins/<mapa politico de españa>/installation/
-
-
-Uso 
-----------
-
+Guía de instalación:https://wordpress.org/plugins/wp-mapa-politico-spain/installation/
 
 
 
 FAQ
 ----------
-Si tienes dudas, preguntas o te da errores ponte en contacto conmigo: página del plugin
+Si tienes dudas, preguntas o te da errores ponte en contacto conmigo: jcglpdotyahoo.es
