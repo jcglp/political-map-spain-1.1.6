@@ -31,6 +31,13 @@ Para instalar el plugin.
 2. Activa el plugin a través del menu 'Plugins' en WordPress.
 3. Para mostrar el mapa usar el shortcode  [wp-political-map-spain]
 
+O bien, desde el panel de control de wordpress
+
+1. Ir a la sección Plugin
+2. Haz click en el enlace Añadir nuevo
+3. En el buscador, escribe “Mapa Politico”, y ahi estará.
+4. Haz click en instalar 
+
 == Frequently Asked Questions ==
 
 Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglpdotyahoo.es
