@@ -17,4 +17,4 @@ Guía de instalación:https://wordpress.org/plugins/wp-mapa-politico-spain/insta
 
 FAQ
 ----------
-Si tienes dudas, preguntas o te da errores ponte en contacto conmigo: jcglpdotyahoo.es
+Si tienes dudas, preguntas o te da errores ponte en contacto conmigo: jcglp@yahoo.es

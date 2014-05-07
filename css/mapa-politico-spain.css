@@ -7,6 +7,10 @@
 		width:601px; 
 		height:477px;
 		
+		margin: 0;
+    padding: 0;
+    border: 0;
+		
 	}
 	
 }
@@ -15,7 +19,11 @@
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	#wp-img-mapa{ 
 		width:601px; 
-		height:477px:
+		height:477px;
+		
+		margin: 0;
+    padding: 0;
+    border: 0;
 		
 	}
 	
@@ -25,13 +33,21 @@
 	#wp-img-mapa{
 		width:430px;
 		
+		margin: 0;
+    padding: 0;
+    border: 0;
+		
 	}
 	
 }
 			
 @media only screen and (max-width: 479px) {		
 	#wp-img-mapa{
-		width:270px; 
+		width:270px;
+		
+		margin: 0;
+    padding: 0;
+    border: 0;
 	
 	}
 	

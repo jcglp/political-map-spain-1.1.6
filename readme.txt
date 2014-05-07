@@ -40,7 +40,7 @@ O bien, desde el panel de control de wordpress
 
 == Frequently Asked Questions ==
 
-Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglpdotyahoo.es
+Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglp@yahoo.es
 
 
 == Screenshots ==
@@ -54,4 +54,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 = 1.0.0 =
 * Primera versión liberada
 
+= 1.0.1 =
+* Los title modificados no se muestran
+* Al desactivar - activar el plugin duplica las entradas
+
+= 1.0.2 =
+* Reset de atributos de la imagen
 
