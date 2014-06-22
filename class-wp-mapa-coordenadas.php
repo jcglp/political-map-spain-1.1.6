@@ -552,6 +552,7 @@ class WP_Mapa_Coordenadas{
 			//$atributo_data_filter = ' data-filter="madrid" ';
 	
 			$mapa .= '<area shape="poly" '
+			.' id ="prv-'.$cod_area.'"'
 			.' class="provincia" '
 			.' coords="'.$this->recuperar_coordenadas($cod_area).'"'
 			.' href="'.$this->get_property($cod_area,'href').'"'

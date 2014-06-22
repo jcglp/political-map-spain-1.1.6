@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 /**
 * Plugin Name: WP Mapa Politico España
 * Plugin URI: http://mispinitoswp.wordpress.com/2014/04/07/wordpress-plugin-mapa-politico-de-espana/
 * Description: Este plugin permite definir para cada una de las provincias de un mapa politico de españa un enlace.
-* Version: 1.0.2
+* Version: 1.1.0
 * Author: Juan Carlos Gomez-Lobo
 * Author URI: http://mispinitoswp.wordpress.com/
 * Text Domain: wpmps
@@ -61,7 +61,12 @@ if (!class_exists('WPMPS_Plugin')) {
 		}
 		
 		function incluirJs($hook) {
-			wp_enqueue_script('wpmps_script', plugins_url(basename(__DIR__) . '/js/mapa-politico-spain.js'));	
+			wp_register_script( 'wpmps_script', plugins_url(basename(__DIR__) . '/js/mapa-politico-spain.js') );
+			$translation_array = array( 'siteurl' => get_bloginfo('siteurl')
+																);
+			wp_localize_script( 'wpmps_script', 'bloginfo', $translation_array );
+			
+			wp_enqueue_script('wpmps_script');	
 		}
 		
 		function incluirOptions($hook) {
@@ -96,7 +101,7 @@ if (!class_exists('WPMPS_Plugin')) {
 						
 						foreach($_POST as $nombre_campo => $valor){
 							$partes = explode("-", $nombre_campo);
-							if (isset($partes[0]) && isset($partes[1])) {
+							if (isset($partes[0]) && isset($partes[1]) && ($nombre_campo!='wpmps-background-color')) {
 								$dml = "UPDATE {$wpdb->prefix}wpmps  SET $partes[1] = '$valor' WHERE id  = $partes[0]";
 								
 								//echo $nombre_campo. " = ". $valor ."<br>";
@@ -104,6 +109,10 @@ if (!class_exists('WPMPS_Plugin')) {
 								$wpdb->query($dml);
 							}
 							
+						}
+						
+						if (isset($_POST['wpmps-background-color'])) {
+							update_option( 'wpmps-background-color', $_POST['wpmps-background-color'] );
 						}
 									
 						?>
@@ -114,6 +123,11 @@ if (!class_exists('WPMPS_Plugin')) {
 				
                 <form action="" method="post">
                  	<?php submit_button(  __('Grabar Opciones', 'wpmps' )); ?>
+                 	<h3><?php  _e ('Color de Fondo para el Mapa', 'wpmps'); ?></h3>
+                 	<input type="text" name="wpmps-background-color" value="<?php echo get_option('wpmps-background-color'); ?>" class="wpmps-color-field" data-default-color="#f3f3f3" />
+                 	
+                 	<h3><?php  _e ('Enlaces Asociados a Provincias', 'wpmps'); ?></h3>
+                 	
                 	<table>
                 		<tr>
                 			<th><?php _e ('Zona', 'wpmps' ); ?></th>
@@ -206,6 +220,9 @@ if (!class_exists('WPMPS_Plugin')) {
 		 
 		$mapa_coordenadas601x477 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas601x477->set_dimension(601,477);
+		
+		$mapa_coordenadas576x477 = clone $mapa_coordenadas920x730;
+		$mapa_coordenadas576x477->set_dimension(576,477);
 			
 		$mapa_coordenadas430x342 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas430x342->set_dimension(430,342);
@@ -215,11 +232,12 @@ if (!class_exists('WPMPS_Plugin')) {
 		
 		
 		
-		$html_mapa = '<div class="wpim-wrap-mapa">'
-					.'<img id="wp-img-mapa" src="' . plugins_url( 'images/mapa_base.png' , __FILE__ ) . '" > '
+		$html_mapa = '<div class="wpim-wrap-mapa wp-border-img-mapa" style="background-color:'.get_option('wpmps-background-color').'">'
+					.'<img id="wp-img-mapa" src="' . plugins_url( 'images/mapa_base_azul_claro.png' , __FILE__ ) . '" > '
 					. $mapa_coordenadas920x730->generar_mapa_coordenadas()
 					. $mapa_coordenadas718x570->generar_mapa_coordenadas()
 					. $mapa_coordenadas601x477->generar_mapa_coordenadas()
+					. $mapa_coordenadas576x477->generar_mapa_coordenadas()
 					. $mapa_coordenadas430x342->generar_mapa_coordenadas()
 					. $mapa_coordenadas270x214->generar_mapa_coordenadas()		
 					.'</div>';
@@ -230,6 +248,16 @@ if (!class_exists('WPMPS_Plugin')) {
 	add_shortcode( 'wp-political-map-spain', 'wp_imgmap' );
 	
 	
+	if (is_admin()){
+		add_action( 'admin_enqueue_scripts','mw_enqueue_color_picker');
+	}
+	function mw_enqueue_color_picker( $hook_suffix ) {
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'wpmps_script_color_picker', plugins_url(basename(__DIR__) . '/js/wp-color.js'), array( 'wp-color-picker' ), false, true );
+	
+	}
+	
+		
 }
 	
 

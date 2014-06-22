@@ -38,6 +38,7 @@ O bien, desde el panel de control de wordpress
 3. En el buscador, escribe “Mapa Politico”, y ahi estará.
 4. Haz click en instalar 
 
+
 == Frequently Asked Questions ==
 
 Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglp@yahoo.es
@@ -51,13 +52,30 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Changelog ==
 
-= 1.0.0 =
-* Primera versión liberada
+= 1.1.0 =
+* Cambio del mapa base. Color Azul Claro
+* Se resalta las areas al pasar el raton por encima, Azul Oscuro
+
+
+= 1.0.5 =
+* Marco sobre la imagen del mapa con opcion para poner color de fondo.
+
+= 1.0.4 =
+* Upgrade del css para tamaño del mapa
+
+= 1.0.3 =
+* Cambio de mapa base. Color Azul
+* Idioma Serbio añadido. Cortesia de http://firstsiteguide.com/
+
+= 1.0.2 =
+* Reset de atributos de la imagen
 
 = 1.0.1 =
 * Los title modificados no se muestran
 * Al desactivar - activar el plugin duplica las entradas
 
-= 1.0.2 =
-* Reset de atributos de la imagen
+= 1.0.0 =
+* Primera versión liberada
+
+
 
