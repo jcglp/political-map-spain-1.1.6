@@ -5,7 +5,7 @@
 @media only screen and (min-width: 960px)  {
 	#wp-img-mapa{ 
 		width:601px !important;
-		height:477px;
+		/*height:477px !important;*/
 		
 		margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	#wp-img-mapa{ 
 		width:601px !important;
-		height:477px;
+		/*height:477px !important;*/
 		
 		margin: 0;
     padding: 0;
@@ -32,6 +32,7 @@
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	#wp-img-mapa{
 		width:430px !important;
+		/*height:342px !important;*/
 		
 		margin: 0;
     padding: 0;
@@ -44,6 +45,7 @@
 @media only screen and (max-width: 479px) {		
 	#wp-img-mapa{
 		width:270px !important;
+		/*height:214px !important;*/
 		
 		margin: 0;
     padding: 0;

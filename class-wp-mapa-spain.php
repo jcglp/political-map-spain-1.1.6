@@ -44,6 +44,14 @@ class WP_PMI_Spain extends WP_Mapa_Coordenadas{
   	 
   	global $wpdb;
   
+  	$arrWPIMs = $wpdb->get_results("SELECT id  FROM {$wpdb->prefix}wpmps ", ARRAY_A);
+  	 
+  	if (count($arrWPIMs)>0){
+  		// Ya exiten datos, no hacemos nada
+  		return true;
+  	}
+  	 
+  	
   	foreach ($this->_areas as $cod_area=>$value)
   	{
   		$wpdb->query("INSERT INTO ".$tabla
@@ -67,7 +75,7 @@ class WP_PMI_Spain extends WP_Mapa_Coordenadas{
   
   	global $wpdb;
   	
-  	$arrWPIMs = $wpdb->get_results("SELECT id, id_zona, desc_zona, coordenadas, href, title FROM $tabla ", ARRAY_A);
+  	$arrWPIMs = $wpdb->get_results("SELECT id, id_zona, desc_zona, coordenadas, href, title FROM {$wpdb->prefix}wpmps ", ARRAY_A);
   	foreach ($arrWPIMs as $wpim) {  		
   		$this->set_property($wpim["id_zona"], 'href', $wpim["href"]);
   		$this->set_property($wpim["id_zona"], 'title', $wpim["title"]);

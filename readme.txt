@@ -2,7 +2,7 @@
 Contributors: jcglp
 Tags: map, image, spain
 Requires at least: 3.0.1
-Tested up to: 3.8.1
+Tested up to: 4.0
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,7 +11,7 @@ Inserta una imagen de un mapa politico de España, con areas definidas sobre las
 
 == Description ==
 
-Este plugin permite insertar un mapa politico de España en posto o páginas. 
+Este plugin permite insertar un mapa politico de España en post o páginas. 
 
 En la página del plugin se pueden definir los titles e hipervinculos de cada una de las provincias.
 
@@ -51,6 +51,26 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 1.1.6 =
+* Correción "redeclare mw_enqueue_color_picker()"
+
+= 1.1.5 =
+* Correción errores menores
+
+= 1.1.4 =
+* Compatibiliad WordPress conn themes twentytwelve, twentythirteen y twentyfourteen
+
+= 1.1.3 =
+* Correcion errores menores
+* Imagenes optimizadas
+* No borrar datos al desactivar el plugin
+
+= 1.1.2 =
+* Correción errores menores.
+
+= 1.1.1 =
+* Se corrige el error "headers already sent" al usar el plugin
 
 = 1.1.0 =
 * Cambio del mapa base. Color Azul Claro

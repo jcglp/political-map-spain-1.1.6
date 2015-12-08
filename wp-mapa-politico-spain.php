@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 /**
 * Plugin Name: WP Mapa Politico España
 * Plugin URI: http://mispinitoswp.wordpress.com/2014/04/07/wordpress-plugin-mapa-politico-de-espana/
 * Description: Este plugin permite definir para cada una de las provincias de un mapa politico de españa un enlace.
-* Version: 1.1.0
+* Version: 1.1.6
 * Author: Juan Carlos Gomez-Lobo
 * Author URI: http://mispinitoswp.wordpress.com/
 * Text Domain: wpmps
@@ -61,8 +61,8 @@ if (!class_exists('WPMPS_Plugin')) {
 		}
 		
 		function incluirJs($hook) {
-			wp_register_script( 'wpmps_script', plugins_url(basename(__DIR__) . '/js/mapa-politico-spain.js') );
-			$translation_array = array( 'siteurl' => get_bloginfo('siteurl')
+			wp_register_script( 'wpmps_script', plugins_url(basename(dirname(__FILE__)) . '/js/mapa-politico-spain.js') );
+			$translation_array = array( 'siteurl' => get_bloginfo('url')
 																);
 			wp_localize_script( 'wpmps_script', 'bloginfo', $translation_array );
 			
@@ -142,7 +142,7 @@ if (!class_exists('WPMPS_Plugin')) {
                     	<tr>
                     	<td><?php echo $wpim["desc_zona"];?></td>
                     	
-                    	<td><input type="text" name="<?php echo $wpim["id"]."-href"?>" value="<?php echo $wpim["href"];?>"></td>
+                    	<td><input style="width:400px;" type="text" name="<?php echo $wpim["id"]."-href"?>" value="<?php echo $wpim["href"];?>"></td>
                     	
                     	<td><input type="text" name="<?php echo $wpim["id"]."-title"?>" value="<?php echo $wpim["title"];?>"></td>
                     	
@@ -191,7 +191,8 @@ if (!class_exists('WPMPS_Plugin')) {
 		
 		function desinstalar() {
 			global $wpdb;
-			$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}wpmps ");
+			//02-9-2014 Al desinstalar NO borrar la tabla
+			//$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}wpmps ");
 			update_option('wpmps_plugin_installed', 'no');
 		}
 		
@@ -215,6 +216,9 @@ if (!class_exists('WPMPS_Plugin')) {
 		$mapa_coordenadas920x730 = new WP_PMI_Spain(920,730);
 		$mapa_coordenadas920x730->recuperar_datos("wp_wpmps");
 		
+		$mapa_coordenadas960x763 = clone $mapa_coordenadas920x730;
+		$mapa_coordenadas960x763->set_dimension(960,763);
+		
 		$mapa_coordenadas718x570 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas718x570->set_dimension(718, 570);
 		 
@@ -223,9 +227,15 @@ if (!class_exists('WPMPS_Plugin')) {
 		
 		$mapa_coordenadas576x477 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas576x477->set_dimension(576,477);
+		
+		$mapa_coordenadas571x477 = clone $mapa_coordenadas920x730;
+		$mapa_coordenadas571x477->set_dimension(571,477);
 			
 		$mapa_coordenadas430x342 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas430x342->set_dimension(430,342);
+		
+		$mapa_coordenadas412x317 = clone $mapa_coordenadas920x730;
+		$mapa_coordenadas412x317->set_dimension(412,317);
 			
 		$mapa_coordenadas270x214 = clone $mapa_coordenadas920x730;
 		$mapa_coordenadas270x214->set_dimension(270,214);
@@ -233,27 +243,36 @@ if (!class_exists('WPMPS_Plugin')) {
 		
 		
 		$html_mapa = '<div class="wpim-wrap-mapa wp-border-img-mapa" style="background-color:'.get_option('wpmps-background-color').'">'
-					.'<img id="wp-img-mapa" src="' . plugins_url( 'images/mapa_base_azul_claro.png' , __FILE__ ) . '" > '
+					.'<img id="wp-img-mapa" src="' . plugins_url( 'images/mapa_base_azul_claro.png' , __FILE__ ) . '"  > '
 					. $mapa_coordenadas920x730->generar_mapa_coordenadas()
+					. $mapa_coordenadas960x763->generar_mapa_coordenadas()
 					. $mapa_coordenadas718x570->generar_mapa_coordenadas()
 					. $mapa_coordenadas601x477->generar_mapa_coordenadas()
 					. $mapa_coordenadas576x477->generar_mapa_coordenadas()
+					. $mapa_coordenadas571x477->generar_mapa_coordenadas()
 					. $mapa_coordenadas430x342->generar_mapa_coordenadas()
+					. $mapa_coordenadas412x317->generar_mapa_coordenadas()
 					. $mapa_coordenadas270x214->generar_mapa_coordenadas()		
 					.'</div>';
+		
+		
 		return $html_mapa;
-			
-	
+		
 	}
 	add_shortcode( 'wp-political-map-spain', 'wp_imgmap' );
 	
 	
+	
+	
+	
+	
+	
 	if (is_admin()){
-		add_action( 'admin_enqueue_scripts','mw_enqueue_color_picker');
+		add_action( 'admin_enqueue_scripts','wpmps_enqueue_color_picker');
 	}
-	function mw_enqueue_color_picker( $hook_suffix ) {
+	function wpmps_enqueue_color_picker( $hook_suffix ) {
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'wpmps_script_color_picker', plugins_url(basename(__DIR__) . '/js/wp-color.js'), array( 'wp-color-picker' ), false, true );
+		wp_enqueue_script( 'wpmps_script_color_picker', plugins_url(basename(dirname(__FILE__)) . '/js/wp-color.js'), array( 'wp-color-picker' ), false, true );
 	
 	}
 	
